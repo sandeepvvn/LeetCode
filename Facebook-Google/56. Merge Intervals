@@ -1,0 +1,33 @@
+
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+       
+        merged=[]
+        
+        intervals=sorted(intervals, key=lambda x: x[0])
+        st=list()
+        for i in intervals:
+            
+            if(len(st)==0):
+                st.append(i[0])
+                st.append(i[1])
+                
+            elif(st[-1]>=i[0] and st[-1]<=i[1]):
+                st.pop()
+                st.append(i[1])
+            
+            elif (st[-1]<i[0] ):
+                st.append(i[0])
+                st.append(i[1])
+                
+        print(st)
+        merged=[]
+        
+        for i in range(round(len(st)/2)):
+            p=st.pop()
+            q=st.pop()
+            
+            merged.append([q,p])
+            
+        return merged
+            
