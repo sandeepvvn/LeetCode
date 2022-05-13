@@ -1,0 +1,27 @@
+class Solution:
+    
+    
+    
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        
+        count=0
+        sumi=0
+        
+        d={}
+        d[0]=1
+        for i in nums:
+            sumi+=i
+            
+            if ((sumi-k)) in d.keys():
+                
+                count+=d[sumi-k]
+            if sumi in d.keys():
+                d[sumi]+=1
+            else:
+                d[sumi]=1
+            
+        
+        return count
+       
+        
+            
