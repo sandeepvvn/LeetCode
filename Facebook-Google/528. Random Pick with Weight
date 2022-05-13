@@ -1,0 +1,22 @@
+import numpy as np
+from numpy.random import choice
+
+class Solution:
+
+    def __init__(self, w: List[int]):
+        
+        self.w=np.array(w)/sum(w)
+        
+        
+
+    def pickIndex(self) -> int:
+        indexes=np.arange(len(self.w))
+        draw = choice(indexes, 1, p=self.w)
+
+        return draw[0]
+        
+
+
+# Your Solution object will be instantiated and called as such:
+# obj = Solution(w)
+# param_1 = obj.pickIndex()
