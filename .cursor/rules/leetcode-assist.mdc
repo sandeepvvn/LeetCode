@@ -1,0 +1,6 @@
+---
+alwaysApply: true
+---
+This repo is for maitaining my daily leet code practice
+
+Every day I will add a new .md file and .py file starting with a number sequence like 1. or 2. followed by the question. Once I paste content, I want you to convert the .md to .md format and .py file to have easy readible comments. Dont add too many comments
